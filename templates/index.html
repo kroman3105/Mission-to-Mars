@@ -11,7 +11,7 @@
     <div class='container'>
         <div class='jumbotron text-center'>
             <h1>Mission to Mars</h1>
-            <p><a class='btn btn-primary btn-lg' href='/scrape'
+            <p><a class='btn btn-success btn-lg' href='/scrape'
                         role='button'>Scrape New Data</a></p>
         </div>
         <!-- Add section for Mars News-->
@@ -45,12 +45,24 @@
         </div>
             <!-- #5 Attempt-->
         <div class='row' id='hemisphere-image'>
+            <style> 
+            h2 {text-align: center;}
+            </style>     
             <div class='col-md-12'>
                 <h2>Mars Hemispheres</h2>
+                <div class='row'>
                 {% for hemisphere in mars.hemispheres %}
-                <img src="{{hemisphere.img_url}}" class='img-responsive' alt='Responsive image'>
-                <h4 class ='image-title'>{{hemisphere.title}}</h4>
-                {% endfor %}
+                    <div class='col-md-3'>
+                        <div href = '#' class = 'thumbnail'>   
+                            <img src="{{hemisphere.img_url}}" alt='generic placeholder thumbnail' style='width:100%'>
+                            <div class = 'caption'>
+                            <p>{{hemisphere.title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}    
+                </div>
+                
             </div>
         </div>
     </div>    
